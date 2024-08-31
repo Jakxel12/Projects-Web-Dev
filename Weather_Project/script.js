@@ -12,9 +12,8 @@ document.querySelector('input[type="text"]').addEventListener('keyup', function(
           const icon = data.weather[0].icon;
           const iconUrl = `http://openweathermap.org/img/wn/${icon}.png`;
   
-          document.querySelector('.grade').innerText = `${temp} °C - ${weatherDescription}`;
-          //document.querySelector('img').src = iconUrl;
-          //document.querySelector('img').alt = weatherDescription;
+          document.querySelector('.grade').innerText = `${temp} °C`;
+          document.querySelector('.state').innerText = `${weatherDescription}`;
         })
         .catch(error => console.error('Error:', error));
     }
@@ -25,6 +24,5 @@ document.querySelector('input[type="text"]').addEventListener('keyup', function(
   function clear() {
     document.querySelector('input[type="text"]').value='';
     document.querySelector('.grade').innerText = '';
-    document.querySelector('img').src = '';
-    document.querySelector('img').alt = '';
+    document.querySelector('.state').innerText = '';
   }
