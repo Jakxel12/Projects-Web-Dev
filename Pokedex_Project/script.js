@@ -9,24 +9,44 @@
 .catch(error => console.error());
 */
 
-async function fetchdata() {
-  try{
+async function fetchData() {
+  try {
     const pokemonName = document.getElementById("pokemonName").value.toLowerCase();
 
-    const response = await fetch (`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
 
-    if(!response.ok) {
-      throw new error('Could not fetch resource')
+    if (!response.ok) {
+      throw new Error('Could not fetch resource');
     }
 
     const data = await response.json();
     const pokemonSprite = data.sprites.front_default;
-    const imgElement = document.getElementById("pokemonSprite")
+    const imgElement = document.getElementById("pokemonSprite");
 
     imgElement.src = pokemonSprite;
-    imgElement.style.display = "block";
-  }
-  catch (error) {
+
+    imgElement.classList.remove('hidden');
+    
+      imgElement.classList.add('visible');
+
+    
+  } catch (error) {
     console.log(error);
   }
 }
+
+document.getElementById("pokemonName").addEventListener('input', () => {
+  const imgElement = document.getElementById("pokemonSprite");
+  const textInput = document.getElementById("pokemonName");
+
+  try {
+    if (textInput.value === '') {
+      imgElement.classList.add('hidden');
+      setTimeout(() => {
+        imgElement.classList.remove('visible');
+      }, 500);
+    }
+  } catch (error) {
+    console.log(error);
+  }
+});

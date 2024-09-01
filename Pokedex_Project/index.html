@@ -1,13 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Pokedex_project</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokedex Project</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <input type="text" name="search-pokemon" id="pokemonName" placeholder="Enter Pokemon name">
-  <input onclick="fetchdata()" type="button" value="search">
-  <img class="" src="" alt="pokemonSprite" id="pokemonSprite" style="display: none">
-  <script src="script.js"></script>
+  <div class="display">
+    <div class="search-section">
+      <input 
+        class="search-bar" 
+        type="search" 
+        name="search-pokemon" 
+        id="pokemonName" 
+        placeholder="Enter Pokémon name">
+      <input 
+        class="search-button" 
+        onclick="fetchData()" 
+        type="button" 
+        value="Search">
+    </div>
+    <img 
+      src="" 
+      alt="Pokemon Sprite" 
+      id="pokemonSprite" 
+      class="hidden">
+    <script src="script.js"></script>
+  </div>
 </body>
 </html>
