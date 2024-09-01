@@ -6,8 +6,8 @@
   return response.json();
 })
 .then(data => console.log(data))
-.catch(error => console.error());
-*/
+.catch(error => console.error());*/
+
 
 async function fetchData() {
   try {
@@ -22,11 +22,13 @@ async function fetchData() {
     const data = await response.json();
     const pokemonSprite = data.sprites.front_default;
     const imgElement = document.getElementById("pokemonSprite");
+    const type1 = data.types[0].type.name;
+    const type2 = data.types.length > 1 ? data.types[1].type.name : null;
+
+    typeColor(type1);
 
     imgElement.src = pokemonSprite;
-
     imgElement.classList.remove('hidden');
-    
       imgElement.classList.add('visible');
 
     
@@ -50,3 +52,15 @@ document.getElementById("pokemonName").addEventListener('input', () => {
     console.log(error);
   }
 });
+
+function typeColor(type) {
+  const typeColor = {
+    normal: 'grey',
+    electric: 'yellow',
+    fire: 'red',
+    water: 'blue'
+  };
+  const color = typeColor[type] || 'white';
+
+  document.getElementById("pokemonSprite").style.backgroundColor = color;
+}
