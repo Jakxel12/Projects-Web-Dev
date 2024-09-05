@@ -58,7 +58,8 @@ function typeColor(type) {
     normal: 'grey',
     electric: 'yellow',
     fire: 'red',
-    water: 'blue'
+    water: 'blue',
+    earth: 'brown'
   };
   const color = typeColor[type] || 'white';
 
