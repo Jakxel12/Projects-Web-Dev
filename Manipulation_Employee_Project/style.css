@@ -1,4 +1,29 @@
-.placeholder-image {
-  width: 200px; 
-  height: 150px; 
+html,body{
+
+}
+
+.display{
+  display: flex;
+  flex-direction:row;
+
+}
+
+.employe-options-display{
+  width: 50px;
+}
+
+.display-employee{
+}
+
+.employe{
+  display: grid;
+  grid-template-rows: 1fr auto 3fr;
+  border: 1px solid;
+  height: auto;
+  width: auto;
+}
+
+img{
+  width: 100px;
+  height: 100px;
 }
