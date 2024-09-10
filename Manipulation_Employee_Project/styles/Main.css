@@ -1,15 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 html,body{
   margin: 0%;
-  height: 0%;
+  height: 100%;
+}
+
+nav{
+  background-color: #babecc;
+  box-shadow: 1px 1px 5px #babecc;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  display: grid;
+  justify-content: end;
+}
+
+.display{
+  display: grid;
+  grid-template-rows: auto 1fr;
 }
 
 .employee-display{
   display: grid;
   grid-template-columns: repeat(3,1fr);
-  margin: auto;
+  margin: 60px;
   justify-items: center;
-  margin-top: 20px;
 
 }
 @media only screen and (max-width:1000px) {
@@ -27,29 +42,37 @@ html,body{
   }
 }
 
-
-
 .employee{
   align-items: center;
+  background-color: #f1f3f8;
   display: grid;
   grid-template-rows: auto auto auto auto;
-  border: 1px solid;
+  border: none;
   margin: 10px;
+  box-shadow: 10px 10px 20px #babecc,
+  -10px -10px 20px #ffff;
   padding: 10px;
   width: min-content;
-  font-family: sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  border-radius: 10px;
+  justify-items: center;
+  text-align: center;
 }
 .employee-description{
-  width: 300px;
+  width: 250px;
 }
 img{
   height: 100px;
+  border: 1px solid #babecc;
+  box-shadow: 1px 1px 10px #babecc;
+  border-radius: 50%;
 }
 
-nav{
-  background-color: rgb(255, 255, 255);
-  box-shadow: 1px 1px 5px #babecc;
-  position: fixed;
-  width: 100vh;
-  height: 50px;
+.nav-button{
+  margin: 10%;
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+  background-color: transparent;
+  border: 1px solid #858686;
 }
