@@ -17,7 +17,7 @@ nav{
 
 .display{
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows:auto 1fr ;
 }
 
 .employee-display{
@@ -34,7 +34,7 @@ nav{
     grid-template-rows: auto;
   }
 }
-@media (max-width:540px) {
+@media (max-width:700px) {
   .employee-display{
     display: grid;
     grid-template-columns: 1fr;
